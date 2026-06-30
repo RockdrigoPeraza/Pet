@@ -1,52 +1,32 @@
-// Obtener parámetros de la URL
+function loadPet() {
 
-const params = new URLSearchParams(window.location.search);
+    const params = new URLSearchParams(window.location.search);
+    const petId = params.get("id");
 
-// Obtener parámetro d
-
-const encoded = params.get("d");
-
-if(encoded){
-
-    try{
-
-        // Decodificar Base64
-
-        const json = atob(encoded);
-
-        // Convertir a objeto
-
-        const data = JSON.parse(json);
-
-        console.log(data);
-
-        // Mostrar información
-
-        document.getElementById("petName").textContent = data.pet.name;
-
-        document.getElementById("petInfo").textContent =
-        `${data.pet.species} • ${data.pet.breed} • ${data.pet.sex}`;
-
-        document.getElementById("ownerName").textContent =
-        data.owner.name;
-
-        document.getElementById("callButton").href =
-        `tel:${data.owner.phone}`;
-
+    if (!petId) {
+        document.getElementById("petName").textContent = "Sin información";
+        document.getElementById("petInfo").textContent = "No se encontró el parámetro 'id'.";
+        return;
     }
 
-    catch(error){
+    fetch(`pets/${petId}.json`)
+        .then(response => {
+            if (!response.ok) throw new Error("No se encontró el archivo JSON");
+            return response.json();
+        })
+        .then(data => {
+            document.getElementById("petName").textContent = data.pet.name;
+            document.getElementById("petInfo").textContent =
+                `${data.pet.species} - ${data.pet.breed} - ${data.pet.sex}`;
 
-        alert("La información del TAG NFC es inválida.");
-
-        console.error(error);
-
-    }
-
-}else{
-
-    document.getElementById("petName").textContent="Sin información";
-
-    document.getElementById("petInfo").textContent="No se encontró el parámetro d.";
-
+            document.getElementById("ownerName").textContent = data.owner.name;
+            document.getElementById("callButton").href = `tel:${data.owner.phone}`;
+        })
+        .catch(error => {
+            console.error(error);
+            document.getElementById("petName").textContent = "Error";
+            document.getElementById("petInfo").textContent = "No se pudo cargar la información.";
+        });
 }
+
+loadPet();
