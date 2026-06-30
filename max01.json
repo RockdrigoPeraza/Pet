@@ -1,0 +1,14 @@
+{
+  "id": "max01",
+  "version": 1,
+  "pet": {
+    "name": "Max",
+    "species": "Perro",
+    "breed": "Golden Retriever",
+    "sex": "Macho"
+  },
+  "owner": {
+    "name": "Rodrigo Peraza",
+    "phone": "9991234567"
+  }
+}
