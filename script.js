@@ -23,7 +23,7 @@ function loadPet() {
             document.getElementById("callButton").href = `tel:${data.owner.phone}`;
             
             // Emoji dinámico según especie
-            const emoji = data.pet.species.toLowerCase() === "Gato" ? "🐱" : "🐶";
+            const emoji = data.pet.species.toLowerCase() === "gato" ? "🐱" : "🐶";
             document.getElementById("petEmoji").textContent = emoji;
         })
         .catch(error => {
