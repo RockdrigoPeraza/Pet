@@ -3,7 +3,7 @@
   "version": 1,
   "pet": {
     "name": "Max",
-    "species": "Gato",
+    "species": "gato",
     "breed": "Golden Retriever",
     "sex": "Macho"
   },
