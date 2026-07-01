@@ -1,0 +1,14 @@
+{
+  "id": "dog01",
+  "version": 1,
+  "pet": {
+    "name": "Dogui",
+    "species": "perro",
+    "breed": "Malix",
+    "sex": "Macho"
+  },
+  "owner": {
+    "name": "Silvia Ku",
+    "phone": "9994483608"
+  }
+}
