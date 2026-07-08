@@ -1,1 +1,14 @@
-
+{
+  "id": "oso03",
+  "version": 1,
+  "pet": {
+    "name": "Oso",
+    "species": "Perro",
+    "breed": "Malix",
+    "sex": "Macho"
+  },
+  "owner": {
+    "name": "Jesús Ruiz",
+    "phone": "+12142893667"
+  }
+}
