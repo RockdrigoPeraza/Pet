@@ -1,0 +1,14 @@
+{
+  "id": "sof06",
+  "version": 1,
+  "pet": {
+    "name": "Sofía",
+    "species": "Gato",
+    "breed": "Mestizo",
+    "sex": "Hembra"
+  },
+  "owner": {
+    "name": "Suemi Koh",
+    "phone": "9999659431"
+  }
+}
